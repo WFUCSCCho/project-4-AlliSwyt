@@ -81,21 +81,39 @@ each case. Take a screenshot of your graph and put them here by modifying this f
 it to this repository.
 
 Insertion, search, and deletion running time (already sorted):
+![img.png](img.png) = insertion 
+![img_1.png](img_1.png) = search
+![img_2.png](img_2.png) = deletion
 
 ![Firefly picture of a cat 86147](https://github.com/user-attachments/assets/8b2d008e-3011-4979-97b8-fa2e9886a01a)
 
 
 Insertion, search, and deletion running time (shuffled):
+![img_3.png](img_3.png) = insertion
+![img_4.png](img_4.png) = search
+![img_5.png](img_5.png) = deletion
 
 Insertion, search, and deletion running time (reversed):
+![img_6.png](img_6.png) = insertion
+![img_7.png](img_7.png) = search
+![img_8.png](img_8.png) = deletion
 
 ## 5. **Document your Dataset and Results**
 Document the source of your dataset and any modifications you made to it. Describe the results of your analysis and 
 how it compares to the theoretical performance of the hash table operations.
 
-Dataset Source: // FINISH ME
-Dataset Modifications ("None" if unchanged): // FINISH ME
-Result Analysis: // FINISH ME
+Dataset Source: // nikhil1e9. “MyAnimeList Anime and Manga dataset.” Kaggle, 2023, https://www.kaggle.com/datasets/nikhil1e9/myanimelist-anime-and-manga. Accessed 3 Dec. 2025.
+Dataset Modifications ("None" if unchanged): // NONE
+Result Analysis: // First I will explain what should happen theoretically and then I will discuss my results. The average runTimes
+    for hash table implementation of Insert, Remove, and Search should run at around O(1), so for N lines, performing insert remove and search 
+    on each of the N elements, runtime should be at O(N). In the case, however, that rehashes are required, the worst case runtime will come to
+    O(N) for each of these individual operations, leading to final runtimes of O(N^2) when performed on each element. Assuming only average runtimes,
+    one would expect a graph of increasing elements to the runtime of insert, remove, and search operations to be linear and increasing at a rate  
+    proportional to the number of lines. Deviations between the sorted, shuffled, and reversed list runtimes should only be due to differences in the 
+    hash function and rehashing. 
+        In my own results, I found average lines increase roughly linearly with the number of lines being read and analyzed. Additionally, there were
+    many large peaks in each graph, which are likely due to rehashing giving worst-case runtime. Additionally, my set hashtable size was somewhat small, so
+    more rehashes than necessary were often used, leading to many unnecessary peaks that could be fixed by changing the initial hash table size. 
 
 ## Submission:
 
